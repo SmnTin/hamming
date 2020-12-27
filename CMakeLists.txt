@@ -73,6 +73,9 @@ file(GLOB_RECURSE SOURCES
 
 add_library(hamming STATIC ${SOURCES})
 
+add_executable(benchmark ${HEADERS} benchmark/benchmark.cpp)
+target_link_libraries(benchmark hamming)
+
 #-------------------------GTEST-------------------------------#
 
 file(GLOB_RECURSE TESTS

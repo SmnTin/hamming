@@ -246,7 +246,7 @@ data_t decode_data(const data_t &encoded) {
 
     data_t decoded;
     decoded.reserve(words.size() / 2);
-    for (size_t i = 0; i < words.size(); i += 2) {
+    for (size_t i = 0; i + 1 < words.size(); i += 2) {
         uint8_t block1 = decode_block(words[i]);
         uint8_t block2 = decode_block(words[i + 1]);
 
